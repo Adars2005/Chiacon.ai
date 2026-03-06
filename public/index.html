@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chiacon AI — Intelligent Solutions for Enterprise</title>
+  <meta name="description"
+    content="Chiacon helps enterprises unlock the power of AI through predictive analytics, automation, and intelligent decision support." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- ─── Navbar ──────────────────────────────────────────────────── -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="#" class="logo">
+        <span class="logo-icon">⬡</span> Chiacon<span class="logo-ai">.ai</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#capabilities">Capabilities</a></li>
+        <li><a href="#use-cases">Use Cases</a></li>
+        <li><a href="#demo">AI Demos</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ─── Hero ────────────────────────────────────────────────────── -->
+  <header class="hero" id="capabilities">
+    <div class="hero-glow"></div>
+    <div class="hero-content">
+      <p class="hero-badge">Enterprise-Grade AI Solutions</p>
+      <h1>Transform Your Business <br />with <span class="gradient-text">Artificial Intelligence</span></h1>
+      <p class="hero-sub">
+        Chiacon empowers enterprises to harness the power of AI — from predictive analytics
+        and intelligent automation to real-time decision support — driving measurable impact
+        across every function.
+      </p>
+      <a href="#demo" class="cta-btn">Try the AI Demo &darr;</a>
+    </div>
+  </header>
+
+  <!-- ─── Use Cases ───────────────────────────────────────────────── -->
+  <section class="use-cases" id="use-cases">
+    <h2 class="section-title">AI Use Cases We Deliver</h2>
+    <p class="section-sub">Real-world AI solutions helping enterprises operate smarter, faster, and leaner.</p>
+
+    <div class="cards">
+      <!-- Card 1 -->
+      <div class="card">
+        <div class="card-icon">📈</div>
+        <h3>Predictive Sales Forecasting</h3>
+        <p>
+          Leverage historical data and market signals to forecast demand with
+          high accuracy — reducing stockouts and excess inventory.
+        </p>
+      </div>
+      <!-- Card 2 -->
+      <div class="card">
+        <div class="card-icon">🤖</div>
+        <h3>Customer Support Automation</h3>
+        <p>
+          Deploy AI-powered chatbots and ticket routers that resolve issues
+          faster, cut costs, and boost CSAT scores.
+        </p>
+      </div>
+      <!-- Card 3 -->
+      <div class="card">
+        <div class="card-icon">📄</div>
+        <h3>Document Intelligence</h3>
+        <p>
+          Extract, classify, and summarise information from contracts, invoices,
+          and reports — at scale and in seconds.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── AI Demos ────────────────────────────────────────────────── -->
+  <section class="demo" id="demo">
+    <h2 class="section-title">AI-Powered Demos</h2>
+    <p class="section-sub">
+      Experience Chiacon's AI capabilities first-hand. Pick a tool below.
+    </p>
+
+    <!-- Tab Switcher -->
+    <div class="tab-bar">
+      <button class="tab active" data-tab="opportunity" onclick="switchTab('opportunity')">
+        📊 Opportunity Generator
+      </button>
+      <button class="tab" data-tab="email" onclick="switchTab('email')">
+        ✉️ Email Generator
+      </button>
+    </div>
+
+    <!-- ── Tab 1: Opportunity Generator ──────────────────── -->
+    <div id="tab-opportunity" class="tab-panel active">
+      <div class="demo-box">
+        <h3 class="demo-box-title">AI Opportunity Generator</h3>
+        <p class="demo-box-desc">Describe a business problem and get AI-powered strategy insights.</p>
+        <div class="input-row">
+          <input id="problemInput" type="text" placeholder="e.g. FMCG company struggling with demand forecasting" />
+          <button id="generateBtn" onclick="generateAI()">
+            <span class="btn-text">Generate</span>
+            <span class="btn-loader hidden" id="btnLoader"></span>
+          </button>
+        </div>
+        <div class="demo-hint">Press <kbd>Enter</kbd> or click Generate to run the AI analysis.</div>
+
+        <div id="resultContainer" class="result-container hidden">
+          <div id="result" class="result-content"></div>
+        </div>
+        <div id="errorContainer" class="error-container hidden">
+          <p id="errorText"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Tab 2: Email Generator ────────────────────────── -->
+    <div id="tab-email" class="tab-panel">
+      <div class="demo-box">
+        <h3 class="demo-box-title">AI Email Generator</h3>
+        <p class="demo-box-desc">Enter company details and get a personalized outreach email instantly.</p>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="companyInput">Company Name</label>
+            <input id="companyInput" type="text" placeholder="e.g. Reliance Industries" />
+          </div>
+          <div class="form-group">
+            <label for="industryInput">Industry</label>
+            <input id="industryInput" type="text" placeholder="e.g. FMCG, Healthcare, Fintech" />
+          </div>
+          <div class="form-group">
+            <label for="roleInput">Target Role</label>
+            <input id="roleInput" type="text" placeholder="e.g. CFO, CTO, VP of Operations" />
+          </div>
+        </div>
+        <button id="emailBtn" class="generate-btn-full" onclick="generateEmail()">
+          <span class="btn-text">Generate Email</span>
+          <span class="btn-loader hidden" id="emailBtnLoader"></span>
+        </button>
+
+        <div id="emailResultContainer" class="result-container hidden">
+          <div class="result-header">
+            <span>Generated Email</span>
+            <button class="copy-btn" onclick="copyEmail()" title="Copy to clipboard">📋 Copy</button>
+          </div>
+          <div id="emailResult" class="result-content"></div>
+        </div>
+        <div id="emailErrorContainer" class="error-container hidden">
+          <p id="emailErrorText"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Footer ──────────────────────────────────────────────────── -->
+  <footer class="footer">
+    <p>&copy; 2026 Chiacon.ai &mdash; Built with ❤️ and LLaMA 3.3</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
