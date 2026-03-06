@@ -101,11 +101,5 @@ run = "npm start"
 3. A **Webview** panel will open showing your live site
 4. Your public URL will look like: `https://your-repl-name.your-username.repl.co`
 
-### Step 6 — Submit
-Copy the Replit URL and submit it as your live demo link!
-
-> **Tip:** The free tier keeps your Repl running while the tab is open. For always-on hosting, consider Replit's paid plan or deploy to **Render / Railway / Vercel** (all have free tiers for Node.js apps).
-
----
 
 Built with ❤️ for the Chiacon AI Prototype Assignment
